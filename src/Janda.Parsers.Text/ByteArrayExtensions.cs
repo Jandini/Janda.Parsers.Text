@@ -1,7 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace Common.Extensions.Parsing
+namespace Janda.Parsers
 {
     public static class ByteArrayExtensions
     {

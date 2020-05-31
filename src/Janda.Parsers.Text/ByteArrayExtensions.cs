@@ -66,6 +66,22 @@ namespace Common.Extensions.Parsing
         }
 
 
+        /// <summary>
+        /// Read pascal string up to given length
+        /// </summary>
+        /// <param name="buffer"></param>
+        /// <param name="offset"></param>
+        /// <param name="max">Maximum string length</param>
+        /// <param name="encoding"></param>
+        /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static string ReadAsPascalStringToString(this byte[] buffer, int offset, int max, Encoding encoding)
+        {
+            int length = buffer[offset];
+            return encoding.GetString(buffer, offset + 1, length > max ? max : length);
+        }
+
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int ReadAsCStringToInt16(this byte[] buffer, int index, int count, Encoding encoding, int defaultValue = 0)
         {
